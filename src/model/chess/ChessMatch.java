@@ -305,14 +305,15 @@ public class ChessMatch {
 		return true;
 	}	
 	
-	private void placeNewPiece(char column, int row, ChessPiece piece) {
+  private void placeNewPiece(char column, int row, ChessPiece piece) {/*método para entrar nas coordenadas
+    do xadrez e não na matriz*/
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
 		piecesOnTheBoard.add(piece);
 	}
 	
 	private void initialSetup() { // colocando as peças no tabuleiro
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));//instaciando a peça no tabuleiro
-        placeNewPiece('b', 1, new Knight(board, Color.WHITE));
+        placeNewPiece('b', 1, new Knight(board, Color.WHITE));//colocando a posição da peça na posição b1
         placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
         placeNewPiece('d', 1, new Queen(board, Color.WHITE));
         placeNewPiece('e', 1, new King(board, Color.WHITE, this));
