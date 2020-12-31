@@ -72,9 +72,9 @@ public class ChessMatch {
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
-		validateSourcePosition(source);
+		validateSourcePosition(source);//validando a posição de origem
 		validateTargetPosition(source, target);
-		Piece capturedPiece = makeMove(source, target);
+		Piece capturedPiece = makeMove(source, target);//operação responsável pela movimentação da peça
 		
 		if (testCheck(currentPlayer)) {
 			undoMove(source, target, capturedPiece);
