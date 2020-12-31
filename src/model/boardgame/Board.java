@@ -53,9 +53,9 @@ public class Board {
 		if (piece(position) == null) {
 			return null;
 		}
-		Piece aux = piece(position);
+		Piece aux = piece(position); //retirando peça do tabuleiro
 		aux.position = null;
-		pieces[position.getRow()][position.getColumn()] = null;
+		pieces[position.getRow()][position.getColumn()] = null; //com isso informar para o tabuleiro que não existe mais a peça
 		return aux;
 	}
 	
